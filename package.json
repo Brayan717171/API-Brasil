@@ -1,0 +1,11 @@
+{
+  "name": "api-estados-cidades",
+  "version": "1.0.0",
+  "description": "API REST de Estados e Cidades do Brasil",
+  "main": "app.js",
+  
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.18.2"
+  }
+}

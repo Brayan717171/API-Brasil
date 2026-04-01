@@ -1,0 +1,446 @@
+/* =====================================================
+   Brasil — Explorador de Estados | style.css
+   ===================================================== */
+
+   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
+
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   
+   :root {
+     --gold:        #c9a84c;
+     --gold-light:  #e8c97a;
+     --gold-dark:   #8a6a1f;
+     --gold-glow:   rgba(201, 168, 76, 0.15);
+     --white:       #f5f5f0;
+     --dark:        #0a0a0a;
+     --surface:     #111111;
+     --border:      #2a2a2a;
+     --muted:       #666;
+     --radius:      10px;
+     --sans:        'DM Sans', sans-serif;
+     --display:     'Bebas Neue', sans-serif;
+   }
+   
+   html { scroll-behavior: smooth; }
+   
+   body {
+     background: var(--dark);
+     color: var(--white);
+     font-family: var(--sans);
+     font-size: 15px;
+     line-height: 1.6;
+     min-height: 100vh;
+   }
+   
+   /* ── HEADER ─────────────────────────────────────── */
+   .header {
+     position: relative;
+     overflow: hidden;
+     padding: 80px 48px 60px;
+     border-bottom: 1px solid var(--border);
+     background: var(--dark);
+   }
+   
+   .header-bg {
+     position: absolute;
+     inset: 0;
+     background:
+       radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+       radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 70%);
+     pointer-events: none;
+   }
+   
+   .header-content { position: relative; z-index: 1; max-width: 700px; }
+   
+   .header-eyebrow {
+     display: inline-block;
+     font-family: var(--sans);
+     font-size: 11px;
+     font-weight: 500;
+     letter-spacing: 3px;
+     text-transform: uppercase;
+     color: var(--gold);
+     margin-bottom: 10px;
+   }
+   
+   .header-title {
+     font-family: var(--display);
+     font-size: clamp(72px, 12vw, 140px);
+     line-height: 0.9;
+     letter-spacing: 2px;
+     color: var(--white);
+     margin-bottom: 20px;
+   }
+   
+   .header-title span {
+     -webkit-text-stroke: 2px var(--gold);
+     color: transparent;
+   }
+   
+   .header-sub {
+     font-size: 15px;
+     color: var(--muted);
+     font-weight: 300;
+     max-width: 420px;
+   }
+   
+   .header-counter {
+     position: absolute;
+     bottom: 60px;
+     right: 48px;
+     font-family: var(--display);
+     font-size: 13px;
+     letter-spacing: 2px;
+     color: var(--muted);
+     z-index: 1;
+   }
+   
+   .header-counter strong {
+     font-family: var(--display);
+     font-size: 48px;
+     color: var(--gold);
+     display: block;
+     line-height: 1;
+   }
+   
+   /* ── NAV ─────────────────────────────────────────── */
+   .nav {
+     display: flex;
+     gap: 0;
+     padding: 0 48px;
+     border-bottom: 1px solid var(--border);
+     background: var(--surface);
+     overflow-x: auto;
+     scrollbar-width: none;
+   }
+   
+   .nav::-webkit-scrollbar { display: none; }
+   
+   .nav-btn {
+     font-family: var(--sans);
+     font-size: 12px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     color: var(--muted);
+     background: none;
+     border: none;
+     border-bottom: 2px solid transparent;
+     padding: 18px 24px;
+     cursor: pointer;
+     transition: color 0.2s, border-color 0.2s;
+     white-space: nowrap;
+   }
+   
+   .nav-btn:hover { color: var(--white); }
+   .nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+   
+   /* ── MAIN ────────────────────────────────────────── */
+   .main { max-width: 1100px; margin: 0 auto; padding: 48px 48px 100px; }
+   
+   .tab-panel { display: none; animation: fadeUp 0.3s ease; }
+   .tab-panel.active { display: block; }
+   
+   @keyframes fadeUp {
+     from { opacity: 0; transform: translateY(16px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   /* ── PANEL HEADER ────────────────────────────────── */
+   .panel-header { margin-bottom: 32px; }
+   .panel-header h2 {
+     font-family: var(--display);
+     font-size: 36px;
+     letter-spacing: 1px;
+     color: var(--white);
+     margin-bottom: 4px;
+   }
+   .panel-header p { color: var(--muted); font-size: 14px; font-weight: 300; }
+   
+   /* ── SIGLAS GRID ─────────────────────────────────── */
+   .siglas-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+     gap: 10px;
+   }
+   
+   .sigla-card {
+     background: var(--surface);
+     border: 1px solid var(--border);
+     border-radius: var(--radius);
+     padding: 20px 10px;
+     text-align: center;
+     cursor: pointer;
+     transition: all 0.2s;
+   }
+   
+   .sigla-card:hover {
+     border-color: var(--gold);
+     background: rgba(201,168,76,0.05);
+     transform: translateY(-2px);
+   }
+   
+   .sigla-card span {
+     font-family: var(--display);
+     font-size: 22px;
+     letter-spacing: 1px;
+     color: var(--white);
+   }
+   
+   /* ── INPUT GROUP ─────────────────────────────────── */
+   .input-group {
+     display: flex;
+     gap: 12px;
+     margin-bottom: 28px;
+     flex-wrap: wrap;
+   }
+   
+   .input-field {
+     background: var(--surface);
+     border: 1px solid var(--border);
+     color: var(--white);
+     font-family: var(--sans);
+     font-size: 15px;
+     padding: 12px 18px;
+     border-radius: var(--radius);
+     outline: none;
+     width: 160px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     transition: border-color 0.2s, box-shadow 0.2s;
+   }
+   
+   .input-field::placeholder { text-transform: none; letter-spacing: 0; color: var(--muted); }
+   .input-field:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+   
+   .btn-buscar {
+     background: var(--gold);
+     color: var(--dark);
+     font-family: var(--sans);
+     font-weight: 500;
+     font-size: 13px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     padding: 12px 28px;
+     border: none;
+     border-radius: var(--radius);
+     cursor: pointer;
+     transition: background 0.2s, transform 0.15s;
+   }
+   
+   .btn-buscar:hover { background: #d4a84b; transform: scale(1.02); }
+   .btn-buscar:active { transform: scale(0.97); }
+   
+   /* ── RESULTADO CARD ──────────────────────────────── */
+   .resultado-card {
+     background: var(--surface);
+     border: 1px solid var(--border);
+     border-radius: var(--radius);
+     padding: 32px;
+     min-height: 120px;
+   }
+   
+   /* ── INFO GRID ───────────────────────────────────── */
+   .info-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+     gap: 20px;
+   }
+   
+   .info-item label {
+     display: block;
+     font-size: 10px;
+     font-weight: 500;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: var(--muted);
+     margin-bottom: 6px;
+   }
+   
+   .info-item span {
+     font-family: var(--display);
+     font-size: 28px;
+     letter-spacing: 1px;
+     color: var(--white);
+   }
+   
+   .info-item span.normal {
+     font-family: var(--sans);
+     font-size: 18px;
+     font-weight: 400;
+     letter-spacing: 0;
+   }
+   
+   /* ── REGIOES BUTTONS ─────────────────────────────── */
+   .regioes-btns {
+     display: flex;
+     gap: 10px;
+     flex-wrap: wrap;
+     margin-bottom: 28px;
+   }
+   
+   .btn-regiao {
+     background: var(--surface);
+     color: var(--white);
+     border: 1px solid var(--border);
+     font-family: var(--sans);
+     font-size: 13px;
+     font-weight: 500;
+     letter-spacing: 0.5px;
+     padding: 10px 22px;
+     border-radius: 100px;
+     cursor: pointer;
+     transition: all 0.2s;
+   }
+   
+   .btn-regiao:hover { border-color: var(--gold); color: var(--gold); }
+   .btn-regiao.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+   
+   /* ── ESTADOS LIST ────────────────────────────────── */
+   .estados-list {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+     gap: 12px;
+     margin-top: 24px;
+   }
+   
+   .estado-chip {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     padding: 14px 16px;
+     background: rgba(255,255,255,0.03);
+     border: 1px solid var(--border);
+     border-radius: var(--radius);
+   }
+   
+   .estado-chip .uf {
+     font-family: var(--display);
+     font-size: 20px;
+     color: var(--gold);
+     min-width: 32px;
+   }
+   
+   .estado-chip .nome {
+     font-size: 13px;
+     color: var(--muted);
+     font-weight: 300;
+   }
+   
+   /* ── CIDADES LIST ────────────────────────────────── */
+   .cidades-header {
+     display: flex;
+     align-items: baseline;
+     gap: 14px;
+     margin-bottom: 20px;
+   }
+   
+   .cidades-header h3 {
+     font-family: var(--display);
+     font-size: 28px;
+     color: var(--white);
+   }
+   
+   .cidades-header .count {
+     font-family: var(--display);
+     font-size: 16px;
+     color: var(--gold);
+   }
+   
+   .cidades-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+     gap: 8px;
+     max-height: 480px;
+     overflow-y: auto;
+     padding-right: 8px;
+   }
+   
+   .cidades-grid::-webkit-scrollbar { width: 4px; }
+   .cidades-grid::-webkit-scrollbar-track { background: transparent; }
+   .cidades-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+   
+   .cidade-item {
+     font-size: 13px;
+     color: var(--muted);
+     padding: 8px 12px;
+     border-radius: 6px;
+     background: rgba(255,255,255,0.02);
+     border: 1px solid transparent;
+     transition: all 0.15s;
+   }
+   
+   .cidade-item:hover { border-color: var(--border); color: var(--white); }
+   
+   /* ── CAPITAIS HISTÓRICAS ─────────────────────────── */
+   .capitais-list { display: flex; flex-direction: column; gap: 14px; }
+   
+   .capital-card {
+     display: grid;
+     grid-template-columns: auto 1fr auto;
+     align-items: center;
+     gap: 20px;
+     padding: 20px 24px;
+     background: rgba(255,255,255,0.02);
+     border: 1px solid var(--border);
+     border-radius: var(--radius);
+     transition: border-color 0.2s;
+   }
+   
+   .capital-card:hover { border-color: var(--gold); }
+   
+   .capital-num {
+     font-family: var(--display);
+     font-size: 36px;
+     color: rgba(255,255,255,0.08);
+     min-width: 36px;
+     text-align: center;
+   }
+   
+   .capital-info h3 {
+     font-family: var(--display);
+     font-size: 22px;
+     letter-spacing: 0.5px;
+     color: var(--white);
+     margin-bottom: 2px;
+   }
+   
+   .capital-info p { font-size: 13px; color: var(--muted); font-weight: 300; }
+   
+   .capital-periodo {
+     text-align: right;
+   }
+   
+   .capital-periodo .ano {
+     font-family: var(--display);
+     font-size: 14px;
+     color: var(--gold);
+     display: block;
+   }
+   
+   .capital-periodo .label {
+     font-size: 10px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     color: var(--muted);
+   }
+   
+   /* ── LOADING / EMPTY / ERROR ─────────────────────── */
+   .loading, .empty, .error-msg {
+     color: var(--muted);
+     font-size: 14px;
+     font-weight: 300;
+     padding: 20px 0;
+   }
+   
+   .error-msg { color: #ff5555; }
+   
+   /* ── RESPONSIVE ──────────────────────────────────── */
+   @media (max-width: 640px) {
+     .header { padding: 48px 24px 40px; }
+     .header-counter { display: none; }
+     .nav { padding: 0 16px; }
+     .main { padding: 32px 24px 80px; }
+     .capital-card { grid-template-columns: 1fr; gap: 10px; }
+     .capital-num { display: none; }
+   }
