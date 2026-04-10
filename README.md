@@ -36,6 +36,8 @@
 
 A **Brasil API** é uma API REST local que fornece dados geográficos completos sobre os estados e cidades do Brasil. O projeto inclui um frontend interativo com tema escuro e dourado, onde é possível consultar todas as informações diretamente pelo navegador — sem precisar de ferramentas como Postman ou Insomnia.
 
+> **Sobre o desenvolvimento:** As funções de manipulação de dados (`funcao.js`) e a lógica da API foram desenvolvidas por mim. O frontend (`index.html`, `style.css`, `js/app.js`) foi desenvolvido com auxílio de inteligência artificial, com o objetivo de proporcionar uma melhor experiência visual para o projeto.
+
 > Projeto desenvolvido com fins educacionais, explorando conceitos de API REST, Node.js e consumo de dados via JavaScript.
 
 ---
@@ -331,6 +333,9 @@ A interface pode ser acessada abrindo o arquivo `index.html` no navegador enquan
 ## 👤 Autor
 
 Desenvolvido por **Brayan**
+
+- 🧠 **Lógica e back-end:** desenvolvidos manualmente — funções de manipulação de dados (`funcao.js`), rotas da API (`server.js`) e estrutura do projeto
+- 🎨 **Frontend:** desenvolvido com auxílio de inteligência artificial para proporcionar uma melhor experiência visual ao projeto
 
 ---
 
